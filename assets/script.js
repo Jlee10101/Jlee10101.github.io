@@ -1,7 +1,7 @@
 /* Reveal on scroll ---------------------------------------- */
 (function () {
   const targets = document.querySelectorAll(
-    ".grid__item, .about-band__title, .about-band__body p, .about-band__stats div, .contact-band__title, .contact-band__card, .project-book__page, .project-pdf__head, .project-pdf__viewer, .eyebrow"
+    ".grid__item, .about-band__title, .about-band__body p, .about-band__portrait, .about-band__stats div, .contact-band__title, .contact-band__card, .project-book__page, .about-page__intro, .about-page__portrait, .resume__heading, .resume__aside, .resume-section, .eyebrow"
   );
   if (!targets.length) return;
   targets.forEach((el) => el.classList.add("reveal"));
