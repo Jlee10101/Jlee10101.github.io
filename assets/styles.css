@@ -76,8 +76,7 @@ em { font-style: italic; }
    1) LANDING PAGE
    ========================================================= */
 body.landing {
-  overflow: hidden;
-  height: 100dvh;
+  min-height: 100dvh;
 }
 .landing__stage {
   position: relative;
@@ -985,6 +984,8 @@ a.contact-band__card:hover { opacity: .7; }
 .project-book__page {
   display: block;
   width: 100%;
+  height: auto;
+  aspect-ratio: 51 / 33;
   background: var(--white);
   box-shadow: 0 2px 14px rgba(13, 16, 22, 0.05),
               0 14px 44px rgba(13, 16, 22, 0.07);
