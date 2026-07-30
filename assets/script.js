@@ -23,10 +23,19 @@
 /* Page transitions ---------------------------------------- */
 (function () {
   // A page restored from the browser's back/forward cache keeps its DOM state.
-  // Clear an interrupted leaving animation before that restored page is painted.
+  // Save and restore it in a fully visible state so a completed fade cannot persist.
   const clearLeavingState = () => document.body.classList.remove("is-leaving");
-  window.addEventListener("pageshow", clearLeavingState);
-  window.addEventListener("popstate", clearLeavingState);
+  const restoreVisibleState = () => {
+    clearLeavingState();
+    document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-in"));
+  };
+
+  window.addEventListener("pagehide", restoreVisibleState);
+  window.addEventListener("pageshow", (event) => {
+    clearLeavingState();
+    if (event.persisted) restoreVisibleState();
+  });
+  window.addEventListener("popstate", restoreVisibleState);
 
   const internal = document.querySelectorAll(
     'a[href]:not([target="_blank"]):not([href^="#"]):not([href^="mailto:"]):not([href^="tel:"])'
