@@ -22,6 +22,12 @@
 
 /* Page transitions ---------------------------------------- */
 (function () {
+  // A page restored from the browser's back/forward cache keeps its DOM state.
+  // Clear an interrupted leaving animation before that restored page is painted.
+  const clearLeavingState = () => document.body.classList.remove("is-leaving");
+  window.addEventListener("pageshow", clearLeavingState);
+  window.addEventListener("popstate", clearLeavingState);
+
   const internal = document.querySelectorAll(
     'a[href]:not([target="_blank"]):not([href^="#"]):not([href^="mailto:"]):not([href^="tel:"])'
   );
