@@ -817,13 +817,6 @@ body.is-leaving { animation: page-leave .55s cubic-bezier(.2,.8,.2,1) forwards; 
   letter-spacing: var(--track-display);
   color: var(--paper);
 }
-.contact-band__dot {
-  display: inline-block;
-  width: .2em; height: .2em;
-  background: var(--blue);
-  vertical-align: baseline;
-  margin-left: .05em;
-}
 .contact-band__grid {
   margin-top: clamp(3rem, 6vw, 5rem);
   display: grid;
