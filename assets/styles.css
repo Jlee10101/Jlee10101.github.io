@@ -39,6 +39,11 @@
   --f-body: "Archivo", "Inter", system-ui, -apple-system, sans-serif;
   --f-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
 
+  /* Optical tracking: open enough for Nordique Pro's compact glyphs,
+     while retaining the precise, contemporary feel of modern sans-serifs. */
+  --track-display: 0.004em;
+  --track-title: 0.012em;
+
   --pad-x: clamp(1.25rem, 4vw, 4rem);
   --pad-y: clamp(4rem, 10vw, 9rem);
 }
@@ -421,7 +426,7 @@ body.is-leaving { animation: page-leave .55s cubic-bezier(.2,.8,.2,1) forwards; 
   font-weight: 500;
   font-size: clamp(1rem, 1.4vw, 1.35rem);
   line-height: 1.35;
-  letter-spacing: -0.015em;
+  letter-spacing: 0;
   max-width: 42ch;
 }
 .grid__overlay .grid__overlay-cue {
@@ -445,7 +450,7 @@ body.is-leaving { animation: page-leave .55s cubic-bezier(.2,.8,.2,1) forwards; 
   font-weight: 900;
   font-size: clamp(1.5rem, 2.4vw, 2.2rem);
   line-height: 1.05;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--track-title);
   text-transform: uppercase;
   color: var(--ink);
   transition: color .3s ease;
@@ -518,7 +523,7 @@ body.is-leaving { animation: page-leave .55s cubic-bezier(.2,.8,.2,1) forwards; 
   font-weight: 900;
   font-size: clamp(2.2rem, 5.5vw, 4.5rem);
   line-height: 1;
-  letter-spacing: -0.035em;
+  letter-spacing: var(--track-display);
   margin-bottom: 2.5rem;
   max-width: 20ch;
 }
@@ -627,7 +632,7 @@ body.is-leaving { animation: page-leave .55s cubic-bezier(.2,.8,.2,1) forwards; 
 .resume__heading h2 {
   font-family: var(--f-display);
   font-weight: 900;
-  letter-spacing: -.045em;
+  letter-spacing: var(--track-display);
   line-height: .94;
 }
 .about-page__intro h1 {
@@ -688,7 +693,7 @@ body.is-leaving { animation: page-leave .55s cubic-bezier(.2,.8,.2,1) forwards; 
   font-family: var(--f-display);
   font-weight: 900;
   font-size: clamp(1.8rem, 3vw, 2.5rem);
-  letter-spacing: -.03em;
+  letter-spacing: var(--track-title);
   line-height: 1;
   margin-bottom: 2rem;
 }
@@ -726,7 +731,7 @@ body.is-leaving { animation: page-leave .55s cubic-bezier(.2,.8,.2,1) forwards; 
   font-family: var(--f-display);
   font-weight: 900;
   font-size: clamp(1.35rem, 2.2vw, 1.85rem);
-  letter-spacing: -.025em;
+  letter-spacing: var(--track-title);
   line-height: 1.1;
 }
 .resume-role h3 span { color: var(--blue); }
@@ -809,7 +814,7 @@ body.is-leaving { animation: page-leave .55s cubic-bezier(.2,.8,.2,1) forwards; 
   font-weight: 900;
   font-size: clamp(2.75rem, 9vw, 9rem);
   line-height: 0.92;
-  letter-spacing: -0.045em;
+  letter-spacing: var(--track-display);
   color: var(--paper);
 }
 .contact-band__dot {
@@ -1004,7 +1009,7 @@ a.contact-band__card:hover { opacity: .7; }
   font-weight: 700;
   text-transform: uppercase;
   font-size: clamp(1.1rem, 2vw, 1.5rem);
-  letter-spacing: -0.015em;
+  letter-spacing: var(--track-title);
 }
 .project-next a { transition: color .3s ease; }
 .project-next a:hover { color: var(--blue); }
