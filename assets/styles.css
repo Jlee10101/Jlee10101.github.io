@@ -527,6 +527,7 @@ body.is-leaving { animation: page-leave .55s cubic-bezier(.2,.8,.2,1) forwards; 
   margin-bottom: 2.5rem;
   max-width: 20ch;
 }
+.about-band__name { color: var(--blue); }
 .about-band__body {
   max-width: 62ch;
   column-count: 1;
@@ -539,6 +540,12 @@ body.is-leaving { animation: page-leave .55s cubic-bezier(.2,.8,.2,1) forwards; 
   margin-bottom: 1.1rem;
 }
 .about-band__body em { color: var(--blue); font-style: italic; }
+.about-band__better {
+  color: var(--blue);
+  text-decoration: underline;
+  text-decoration-thickness: .1em;
+  text-underline-offset: .12em;
+}
 .about-band__link,
 .about-page__jump {
   display: inline-flex;
